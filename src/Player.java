@@ -15,7 +15,7 @@ public class Player {
 	
 	public int tossDie(Die die) {
 		int face = die.getFace();
-		System.out.println(getName() + " toss a die... Face is " + face);
+		System.out.println("[Turn " + (getTotalWalk() + 1) + "] " + getName() + " toss a die... Face is " + face);
 		return face;
 	}
 	
@@ -25,6 +25,9 @@ public class Player {
 	
 	public void setPosition(int position) {
 		this.position = position;
+	}
+	
+	public void nextTurn() {
 		totalWalk++;
 	}
 	

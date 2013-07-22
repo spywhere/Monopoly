@@ -13,6 +13,12 @@ public class Board {
 		for(int i = 0;i < squares.length;i++){
 			if(i == 0){
 				squares[i] = new Square("GO");
+			}else if(i == 9){
+				squares[i] = new Square("Jail");
+			}else if(i == 19){
+				squares[i] = new Square("Vacation");
+			}else if(i == 29){
+				squares[i] = new Square("Fortune");
 			}else{
 				squares[i] = new Square("Square " + i);
 			}
@@ -21,7 +27,8 @@ public class Board {
 	
 	public void movePlayer(Player player, int face) {
 		player.setPosition(normalizePosition(player.getCurrentPosition() + face));
-		System.out.println(player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+		System.out.println("[Turn " + (player.getTotalWalk() + 1) + "] " + player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+		player.nextTurn();
 	}
 	
 	public int normalizePosition(int position) {
@@ -37,6 +44,8 @@ public class Board {
 	}
 	
 	public void nextTurn() {
-		currentTurn++;
+		if(++currentTurn >= players.length){
+			currentTurn = 0;
+		}
 	}
 }
