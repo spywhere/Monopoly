@@ -6,5 +6,6 @@ public class Player {
 	}
 
 	public int tossDie(Die die) {
+		return 0;
 	}
 }
