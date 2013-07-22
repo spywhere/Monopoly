@@ -22,10 +22,19 @@ public class Monopoly {
 	
 	public void startGame() {
 		System.out.println("Game start!");
-		while (!isGameEnd()){
-			int face = board.getCurrentPlayer().tossDie(die);
-			board.movePlayer(board.getCurrentPlayer(), face);
+		System.out.println("========");
+		while (!isGameEnd() && !board.hasWinner()){
+			if(!board.getCurrentPlayer().isBrokeOut()){
+				int face = board.getCurrentPlayer().tossDie(die);
+				board.movePlayer(board.getCurrentPlayer(), face);
+			}
 			board.nextTurn();
+		}
+		System.out.println("========");
+		if(board.hasWinner()){
+			System.out.println(board.getWinner().getName() + " is won by don't brokeout!");
+		}else{
+			System.out.println(board.getMaxMoneyPlayer().getName() + " is won by have most money!");
 		}
 		System.out.println("Game over!");
 	}
