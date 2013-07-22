@@ -6,7 +6,6 @@ public class Player {
 	}
 
 	public int tossDie(Die die) {
-		int face = die.getFace();
-		return face;
+		return 0;
 	}
 }
