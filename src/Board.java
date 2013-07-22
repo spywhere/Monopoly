@@ -24,7 +24,7 @@ public class Board {
 			}else if(i == 29){
 				squares[i] = new GoToJailSquare("Go to Jail");
 			}else{
-				squares[i] = new HouseSquare(names[rand.nextInt(names.length)] + " " + names[rand.nextInt(names.length)], 500 + rand.nextInt(500));
+				squares[i] = new HouseSquare(names[rand.nextInt(names.length)] + " " + names[rand.nextInt(names.length)], 400 + rand.nextInt(300));
 			}
 		}
 	}
