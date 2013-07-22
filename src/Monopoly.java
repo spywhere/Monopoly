@@ -12,7 +12,7 @@ public class Monopoly {
 		Scanner scanner = new Scanner(System.in);
 		int totalPlayer = 0;
 		while (totalPlayer < 2 || totalPlayer > 8){
-			System.out.println("Total Player: ");
+			System.out.print("Total Player: ");
 			totalPlayer = scanner.nextInt();
 		}
 		scanner.close();
@@ -21,11 +21,13 @@ public class Monopoly {
 	}
 	
 	public void startGame() {
+		System.out.println("Game start!");
 		while (!isGameEnd()){
 			int face = board.getCurrentPlayer().tossDie(die);
 			board.movePlayer(board.getCurrentPlayer(), face);
 			board.nextTurn();
 		}
+		System.out.println("Game over!");
 	}
 	
 	public boolean isGameEnd() {
