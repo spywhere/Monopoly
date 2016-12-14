@@ -20,7 +20,7 @@ public class Monopoly {
 			}
 			catch(Exception e) {
 				System.err.println("Error: Number too large.");
-				main(args);
+				continue;
 			}
 			if(totalPlayer > 8) {
 				System.err.println("Error: Invalid player count.");
